@@ -104,19 +104,14 @@ export default {
       return this.allBooks(this.type);
     },
     totalBooks() {
-      console.log(this.configBooks(this.type).totalBooks);
       return this.configBooks(this.type).totalBooks;
     },
     perPage() {
       return this.configBooks(this.type).perPage;
     },
-    getStateContent() {
-      if (this.allBooks(this.type).length) {
-        document.querySelector('.search-part__content').classList.add('loaded');
-      } else {
-        document.querySelector('.search-part__content').classList.remove('loaded');
-      }
-    },
+  },
+  mounted() {
+    this.getStateContent();
   },
   methods: {
     getBook(id) {
@@ -132,6 +127,13 @@ export default {
         isShow: true,
         selectedItem: results.length ? results[0] : null,
       });
+    },
+    getStateContent() {
+      if (this.allBooks(this.type).length) {
+        document.querySelector('.search-part__content').classList.add('loaded');
+      } else {
+        document.querySelector('.search-part__content').classList.remove('loaded');
+      }
     },
   },
 };
@@ -215,6 +217,10 @@ export default {
   @media only screen and (max-width: 475px) {
     .book__img {
       display: none;
+    }
+
+    .book {
+      margin-left: 0;
     }
   }
 

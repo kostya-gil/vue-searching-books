@@ -91,7 +91,7 @@
                 <a
                   v-if="selectedItem"
                   v-show="selectedItem.id == chosenBook.id"
-                  href="/#/selected"
+                  href="#/selected"
                   class="book__shares-item chosen"
                 >
                   <object class="book__shares-item-icon">
@@ -388,11 +388,13 @@ export default {
     padding: 14px 0 14px 20px;
 
     &__author {
+      max-width: 200px;
       position: absolute;
       right: 20px;
       color: #413f3f;
       font-size: 12px;
-      top: 18px;
+      top: 50%;
+      transform: translateY(-50%);
     }
 
   }
