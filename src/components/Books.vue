@@ -1,8 +1,5 @@
 <template>
   <div>
-    <p v-if="!totalBooks && type == 'selectedBooks'">
-      Нет избранных книг...
-    </p>
     <div
       class="books-area"
     >
